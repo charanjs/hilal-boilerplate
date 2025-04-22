@@ -1,0 +1,17 @@
+first create namespace  kubectl create namespace fastapi-app
+
+apply the secrets kubectl apply -f app-secret.yaml
+ and apply deployments and services: kubectl apply -f postgres-deployment.yaml
+kubectl apply -f postgres-service.yaml
+
+kubectl apply -f pgadmin-deployment.yaml
+kubectl apply -f pgadmin-service.yaml
+
+kubectl apply -f app-deployment.yaml
+kubectl apply -f app-service.yaml
+  check statuses kubectl get pods -n fastapi-app
+kubectl get services -n fastapi-app
+  http://<EXTERNAL-IP-FOR-boilerplate-app>:8000/docs 
+http://<EXTERNAL-IP-FOR-pgadmin>:5050
+ 	•	PGADMIN_EMAIL = admin@admin.com
+* PGADMIN_PASSWORD = admin
